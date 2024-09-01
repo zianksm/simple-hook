@@ -83,7 +83,7 @@ contract PointsHook is BaseHook, ERC20 {
         if (data.length == 0) return;
 
         // Decode the data to get the user and referrer
-        (address user, address referrer) = abi.decode(data, (address, address));
+        (address referrer, address user) = abi.decode(data, (address, address));
 
         if (user == address(0)) {
             // If the user is the zero address, return
